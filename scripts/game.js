@@ -100,11 +100,10 @@ let restartPacmanAndGhosts = () => {
 
 let onGhostCollision = () => {
     lives--;
-    restartPacmanAndGhosts();
     if (lives == 0) {
-        clearInterval(gameInterval)
-        
+        window.location.reload(false);
     }
+    restartPacmanAndGhosts();
 };
 
 let update = () => {
@@ -249,7 +248,7 @@ let createGhosts = () => {
 
 createNewPacman();
 createGhosts();
-gameLoop();
+// gameLoop();
 
 window.addEventListener("keydown", (event) => {
     let k = event.keyCode;
